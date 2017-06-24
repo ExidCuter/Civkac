@@ -8,30 +8,102 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width">
+		 <link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
-	<body style="background-color: #14171a;">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-bell"></span> Notofications <span id="not-num"> #</span></a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Messages</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				</ul>
+	<body class="body-back">
+		<div class="">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li><a href="#">Domov</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-bell"></span> Obvestila</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Sporočila</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="row top">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-3 white-back ">
+				<div class="profile margin-all">
+					<div class="">
+						<img class="img-back" src="img/back.png" alt="">
+					</div>
+					<div style="background-color: #fff;" class="img-up">
+						<img class="img-prof img-circle" src="img/prof.jpg" alt="">
+					</div>
+					<div class="name">
+						<div class="username">
+							<b>dodo</b>
+						</div>
+						<div class="handle">
+							@dodo
+						</div>
+					</div>
+					<div style="margin-top: 4%;" class="stats row padding-all">
+						<div class="col-sm-4">
+							<div class="what">
+								<b>Čivkov</b>
+							</div>
+							<div class="how-many">
+								#
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="what">
+								<b>Sledi</b>
+							</div>
+							<div class="how-many">
+								#
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="what">
+								<b>Sledeci</b>
+							</div>
+							<div class="how-many">
+								#
+							</div>
+						</div>
+					</div>
+					<div class="spacer"><br></div>
+				</div>
 			</div>
-		</nav>
-		<div class="row">
-			<div class="col-sm-3">
-				test
+			<div class="col-sm-1"></div>
+			<div class="col-sm-6 white-back">
+				<div class="row write-post-back">
+					<div class="col-sm-1"></div>
+					<div class="col-sm-10">
+						<div class="padding-top-bot">
+							<div class="inline">
+								<img class="img-write img-circle" src="img/prof.jpg" alt="">
+							</div>
+							<div class="inline form-horizontal">
+								<input class="form-control inline" style="width: 80%;" type="text" name="" value="">
+								<button class="btn btn-info" type="button" name="button">čivkni</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					content
+				</div>
 			</div>
-			<div class="col-sm-6">
-				test 2
-			</div>
-
+			<div class="col-sm-1"></div>
 		</div>
 	</body>
 </html>
