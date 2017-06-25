@@ -18,13 +18,13 @@
     margin-left: 2%;
 }
 .img-post-div{
-    width: 48px;
-    height: 48px;
+    max-width: 55px;
+    max-height: 55px;
     margin: auto;
 }
 .img-post{
-    width: 48px;
-    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
 }
 .name{
     margin-left: 32%;
