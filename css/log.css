@@ -1,0 +1,15 @@
+.body-back-intro{
+    background-image: url(background.png);
+    background-color: #e6ecf0;
+    background-size: 100%;
+}
+.log-box{
+    background-color: #fff;
+    margin-top: 100px;
+    padding: 15px;
+}
+.reg-box{
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 15px;
+}
