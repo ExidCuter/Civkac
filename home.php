@@ -4,14 +4,19 @@
 		<meta charset="utf-8">
 		<title>Čivkač</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<!-- Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<script src="js/script.js" type="text/javascript"></script>
 	</head>
 	<body class="body-back">
+		<?php
+			session_start();
+            if (!isset($_SESSION['username'])) {
+                header('Location: index.php');
+            }
+         ?>
 		<div class="navi">
 			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container-fluid">
@@ -36,7 +41,7 @@
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li>
-								<a href="#"><span class="glyphicon glyphicon-user"></span> Dodo</a>
+								<a href="scripts/logout.php"><span class="glyphicon glyphicon-user"></span><?php echo $_SESSION['username']; ?></a>
 							</li>
 							<li>
 								<button class="btn btn-info navbar-btn" type="button" name="button"> <span class="glyphicon glyphicon-edit"></span> Čivkni</button>
@@ -58,14 +63,14 @@
 							<img class="img-back" src="img/back.png" alt="">
 						</div>
 						<div style="background-color: #fff;" class="img-up">
-							<img class="img-prof img-circle" src="img/prof.jpg" alt="">
+							<img class="img-prof img-circle" src="<?php echo $_SESSION['img']; ?>" alt="">
 						</div>
 						<div class="name">
 							<div class="username">
-								<b>Dodo Dodović</b>
+								<b><?php echo $_SESSION['username']; ?></b>
 							</div>
 							<div class="handle">
-								@dodo
+								@<?php echo $_SESSION['handle']; ?>
 							</div>
 						</div>
 						<div style="margin-top: 4%;" class="stats row">
@@ -104,16 +109,19 @@
 						<div class="col-sm-10">
 							<div class="padding-top-bot">
 								<div class="inline">
-									<img class="img-write img-circle" src="img/prof.jpg" alt="">
+									<img class="img-write img-circle" src="<?php echo $_SESSION['img']; ?>" alt="">
 								</div>
 								<div class="inline form-horizontal">
-									<input class="form-control inline" style="width: 80%;" type="text" name="" value="">
-									<button class="btn btn-info" type="button" name="button">čivkni</button>
+									<input id="text" class="form-control inline" style="width: 80%;" type="text" name="" value="">
+									<button id="civkni" class="btn btn-info" type="button" name="button">čivkni</button>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="content">
+						<?php
+						include('scripts/tweets.php');
+						?>
 						<div class="post">
 							<div class="col-sm-2 coustom-col-2 ">
 								<div class="img-post-div ">
@@ -125,45 +133,7 @@
 							</div>
 							<div class="col-sm-10 coustom-col-10">
 								<div class="post-text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<hr>
-							</div>
-						</div>
-
-
-						<div class="post">
-							<div class="col-sm-2 coustom-col-2 ">
-								<div class="img-post-div ">
-									<img class="img-post img-circle" src="img/prof.jpg" alt="">
-								</div>
-							</div>
-							<div class="post-name col-sm-10  coustom-col-10">
-								<span> <b>Dodo Dodović</b></span> <span>@dodo</span> <span> - </span> <span>24h</span>
-							</div>
-							<div class="col-sm-10 coustom-col-10">
-								<div class="post-text">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<hr>
-							</div>
-						</div>
-						<div class="post">
-							<div class="col-sm-2 coustom-col-2 ">
-								<div class="img-post-div ">
-									<img class="img-post img-circle" src="img/prof.jpg" alt="">
-								</div>
-							</div>
-							<div class="post-name col-sm-10  coustom-col-10">
-								<span> <b>Dodo Dodović</b></span> <span>@dodo</span> <span> - </span> <span>24h</span>
-							</div>
-							<div class="col-sm-10 coustom-col-10">
-								<div class="post-text">
-									RANDOM SHIOT SADJAS:FJSJGAKLJ SADJaksjdklas asd askdj asjdlasjd asjdas sajdjadjalg[gdg sdg sd]
+									Zdej delajo civki!
 								</div>
 							</div>
 							<div class="col-sm-12">
