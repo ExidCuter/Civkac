@@ -18,6 +18,7 @@
             }
          ?>
 		<div class="navi">
+
 			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container-fluid">
 					<div class="navbar-header">
@@ -27,10 +28,10 @@
 							<span class="icon-bar"></span>
 						</button>
 					</div>
-					<div class="collapse navbar-collapse" id="myNavbar">
+					<div class="collapse navbar-collapse" id="myNavbar" images="<?php echo $_SESSION['img']; ?>">
 						<ul class="nav navbar-nav">
 							<li class="">
-								<a href="#"><span class="glyphicon glyphicon-home"></span> Domov</a>
+								<a href="home.php"><span class="glyphicon glyphicon-home"></span> Domov</a>
 							</li>
 							<li>
 								<a href="#"><span class="glyphicon glyphicon-bell"></span> Obvestila</a>
@@ -40,6 +41,22 @@
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+							<form class="navbar-form navbar-left">
+								<div class="input-group">
+									<input id="search" type="text" class="form-control" placeholder="Search">
+									<div class="input-group-btn">
+										<button class="btn btn-default" type="submit">
+											<i class="glyphicon glyphicon-search"></i>
+										</button>
+
+									</div>
+									<div id="result" class="result">
+
+									</div>
+								</div>
+							</form>
+							</li>
 							<li>
 								<a href="scripts/logout.php"><span class="glyphicon glyphicon-user"></span><?php echo $_SESSION['username']; ?></a>
 							</li>
@@ -79,7 +96,17 @@
 									<b>Čivkov</b>
 								</div>
 								<div class="how-many">
-									#
+									<?php
+									include('scripts/conn.php');
+									$sql= "SELECT count(t.id) FROM tweets t INNER JOIN users u ON u.id = t.user_id WHERE handle = '".$_SESSION['handle']."';";
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+									    $row = $result->fetch_assoc();
+									    echo $row['count(t.id)'];
+									}
+									$conn->close();
+									?>
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -87,7 +114,17 @@
 									<b>Sledi</b>
 								</div>
 								<div class="how-many">
-									#
+									<?php
+									include('scripts/conn.php');
+									$sql= "SELECT count(f.id) FROM follows f INNER JOIN users u ON u.id = f.user_id WHERE handle = '".$_SESSION['handle']."';";
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+									    $row = $result->fetch_assoc();
+									    echo $row['count(f.id)'];
+									}
+									$conn->close();
+									?>
 								</div>
 							</div>
 							<div class="col-sm-4">
@@ -95,7 +132,17 @@
 									<b>Sledeci</b>
 								</div>
 								<div class="how-many">
-									#
+									<?php
+									include('scripts/conn.php');
+									$sql= "SELECT count(f.id) FROM follows f INNER JOIN users u ON u.id = f.follows_id WHERE handle = '".$_SESSION['handle']."';";
+									$result = $conn->query($sql);
+
+									if ($result->num_rows > 0) {
+									    $row = $result->fetch_assoc();
+									    echo $row['count(f.id)'];
+									}
+									$conn->close();
+									?>
 								</div>
 							</div>
 						</div>
@@ -122,26 +169,6 @@
 						<?php
 						include('scripts/tweets.php');
 						?>
-						<div class="post">
-							<div class="col-sm-2 coustom-col-2 ">
-								<div class="img-post-div ">
-									<img class="img-post img-circle" src="img/prof.jpg" alt="">
-								</div>
-							</div>
-							<div class="post-name col-sm-10  coustom-col-10">
-								<span> <b>Dodo Dodović</b></span> <span>@dodo</span> <span> - </span> <span>24h</span>
-							</div>
-							<div class="col-sm-10 coustom-col-10">
-								<div class="post-text">
-									Zdej delajo civki!
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<hr>
-							</div>
-						</div>
-
-
 					</div>
 				</div>
 				<div class="col-sm-1"></div>

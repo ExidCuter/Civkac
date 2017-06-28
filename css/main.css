@@ -67,3 +67,12 @@
 .coustom-col-10{
     padding: 0;
 }
+.result{
+    position: fixed;
+    top:42px;
+    background-color: white;
+    right: 247px;
+    border: solid 1px #e7e7e7;
+    width: 235px;
+    border-radius: 5px;
+}

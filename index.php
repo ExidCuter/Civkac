@@ -59,11 +59,11 @@
                 <form class="" action="login.php" method="post">
                     <div class="form-group">
                         <label for="email">E-poštni naslov:</label>
-                        <input required name="email" class="form-control" id="email1" type="email">
+                        <input required name="email" maxlength="30" class="form-control" id="email1" type="email">
                     </div>
                     <div class="form-group">
                         <label for="pwd">geslo:</label>
-                        <input required name="pass" class="form-control" id="pwd" type="password">
+                        <input required name="pass" maxlength="30"  class="form-control" id="pwd" type="password">
                     </div>
                     <div class="checkbox">
                         <label><input type="checkbox"> Zapomi si me</label>
@@ -77,16 +77,16 @@
             <div class="reg-box col-sm-2">
                     <form id="register-form" class="" action="register.php" method="post">
                         <div class="form-group">
-                            <label for="name">ime:</label>
+                            <label for="name">ime: <span class="redtext" id="wrongname"></span></label>
                             <input required name="ime" class="form-control" id="name" type="text">
                         </div>
                         <div class="form-group">
-                            <label for="name">handle:</label>
-                            <input required  name="handle" class="form-control" id="handle" type="text">
+                            <label for="name">handle: <span class="redtext" id="wronghandle"></span></label>
+                            <input required name="handle" class="form-control" id="handle" type="text">
                         </div>
                         <div class="form-group">
-                            <label for="email">E-poštni :</label>
-                            <input required  name="mail" class="form-control" id="email" type="email">
+                            <label for="email">E-poštni :<span class="redtext" id="wrongemail"></span></label>
+                            <input required name="mail" class="form-control" id="email" type="email">
                         </div>
                         <div class="form-group">
                             <label for="pwd">geslo: <span class="redtext" id="passmach"></span></label>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="form-group">
                             <label for="pwd">geslo: <span class="redtext" id="passmach2"></span></label>
-                            <input required  name="pass2" class="form-control" id="pwd2" type="password">
+                            <input required name="pass2" class="form-control" id="pwd2" type="password">
                         </div>
                         <button id="reg-button" class="btn btn-default" type="button" name="button">Prijavi se!</button>
                     </form>
