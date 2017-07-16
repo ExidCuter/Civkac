@@ -1,4 +1,3 @@
 # civkac
-Twitter clone!
+A Twitter clone!
 
-(c) Dodo Dodovic
